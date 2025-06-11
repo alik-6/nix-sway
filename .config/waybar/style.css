@@ -1,0 +1,90 @@
+/* ~/.config/waybar/style.scss */
+/* Color Variables */
+/* Global Defaults */
+* {
+  font-family: "JetBrains Mono", "Sans";
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+}
+
+/* Waybar Window */
+window#waybar {
+  background-color: rgb(0, 0, 0);
+  margin: 10px;
+  margin-top: 0px;
+  border: 0px;
+}
+
+#tray {
+  padding-right: 4px;
+}
+
+#custom-clock {
+  padding-right: 4px;
+}
+
+/* Workspaces */
+#workspaces {
+  margin: 0px;
+}
+
+#mode {
+  background-color: rgb(138, 233, 252);
+  color: rgb(0, 0, 0);
+  padding: 0px;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-right: 2px;
+}
+
+#workspaces button {
+  border: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0 4px;
+  border-radius: 0px;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+#workspaces button.focused {
+  background-color: rgb(138, 233, 252);
+  color: rgb(0, 0, 0);
+}
+
+#workspaces button.urgent {
+  background-color: rgb(38.55, 214.3, 249.45);
+  color: rgb(0, 0, 0);
+}
+
+#workspaces button.urgent > * {
+  color: rgb(0, 0, 0);
+}
+
+#workspaces button.focused > * {
+  color: rgb(0, 0, 0);
+}
+
+#workspaces button:hover,
+#workspaces button:hover > * {
+  color: rgb(255, 255, 255);
+}
+
+#workspaces button.focused:hover,
+#workspaces button.focused:hover > * {
+  color: rgb(255, 255, 255);
+}
+
+#window > * {
+  margin: 0px;
+  margin: 4px;
+  margin-top: 0px;
+  font-size: 12px;
+  letter-spacing: 0.85px;
+  margin-left: 4px;
+  margin-bottom: 0px;
+}
+
+/* Hover Effect */
+
+/*# sourceMappingURL=style.css.map */
