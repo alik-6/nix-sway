@@ -1,0 +1,53 @@
+* {
+	font-family: "Hack", monospace;
+}
+
+window {
+	background-color: #000000;
+}
+
+#input {
+	margin: 5px;
+	border-radius: 0px;
+	border: none;
+	background-color: #000000;
+	color: white;
+	padding-bottom:4px;
+}
+#input:focus, input:selected {
+	outline:none;
+	box-shadow:none;;
+}
+
+#inner-box > * {
+	background-color: #000000;
+}
+
+#outer-box {
+	margin: 2px;
+	padding: 10px;
+	background-color: #000000;
+}
+
+/* #scroll {
+	/* outline-color:#ffffff; */
+	
+ /* mmargin: 5px; */
+/* } */ 
+
+#text {
+	padding: 4px;
+	color: white;
+}
+
+/*#entry:nth-child(even){
+	background-color: #404552;
+}*/
+#entry:selected {
+	background-color: #8ae9fc;
+}
+
+#text:selected {
+	background: transparent;
+	color:#000000;
+}
