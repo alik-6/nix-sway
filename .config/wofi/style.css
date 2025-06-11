@@ -13,7 +13,6 @@ window {
 	background-color: #000000;
 	color: white;
 	padding-bottom:4px;
-	/*border-bottom:1px solid #8ae9fc;*/
 }
 #input:focus, input:selected {
 	outline:none;
@@ -28,14 +27,13 @@ window {
 	margin: 2px;
 	padding: 10px;
 	background-color: #000000;
-  /*border: 1px solid #8ae9fc;*/
 }
 
-#scroll {
+/* #scroll {
 	/* outline-color:#ffffff; */
 	
  /* mmargin: 5px; */
-}
+/* } */ 
 
 #text {
 	padding: 4px;

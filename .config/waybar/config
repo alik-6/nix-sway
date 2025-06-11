@@ -1,0 +1,34 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 32,
+    "margin": 10,
+    "reload_style_on_change": true,
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode",
+        "sway/window"
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+        "custom/clock",
+        "tray"
+
+    ],
+    "tray": {
+        "icon-size": 24
+    },
+    "sway/window": {
+        "align": 0,
+        "justify": "left"
+    },
+    "sway/workspaces": {},
+    "pulseaudio": {
+        "format": "VOL: {volume}%"
+    },
+    "custom/clock": {
+        "exec": "$HOME/.config/waybar/scripts/clock.sh",
+        "return-type": "text"
+    }
+}

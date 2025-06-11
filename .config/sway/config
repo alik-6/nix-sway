@@ -4,26 +4,24 @@ set {
     $down j
     $up k
     $right l
-    $term alacritty
-    $menu wofi -s /home/user/.config/sway/style.css --show drun
-    $wallpaper ./background.png
+    $term kitty
+    $config ${HOME}/.config/sway
+    $menu wofi --show drun
+    $wallpaper $config/wallpapers/w1.png
     $touchpadid "2:8:AlpsPS/2_ALPS_DualPoint_TouchPad"
     $resizeby 10
     $screenshot grim
-    $barheight 32
     $windowgap 6
-    # Note: Add +3 to $windowgap
-    $bargap 9
-    $col1 #000000FF
-    $col2 #8ae9fcff
-    $col3 #FFFFFFFF
-    $col4 #80808080
+    $black #000000FF
+    $cyan #8ae9fcff
+    $white #FFFFFFFF
+    $gray #80808080
 }
 
-output * bg $wallpaper fill
+exec_always swaybg -i $wallpaper  -m fill
+exec waybar
 
 default_border pixel 2
-hide_edge_borders smart
 
 gaps inner $windowgap
 gaps outer $windowgap
@@ -44,7 +42,7 @@ bindsym $mod+Return exec $term                # Start terminal
 bindsym $mod+Shift+q kill                     # Kill focused window
 bindsym $mod+d exec $menu                     # Launch application menu
 floating_modifier $mod normal                 # Drag floating windows with $mod + mouse
-bindsym $mod+Shift+c reload                   # Reload config
+bindsym $mod+Shift+c exec $config/nags/reload.sh               # Reload config
 bindsym $mod+Shift+e exec swaynag -t warning \
     -m 'Exit sway? This will end your Wayland session.' \
     -B 'Yes, exit sway' 'swaymsg exit'
@@ -91,6 +89,10 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
+# Cycling Workspaces
+bindsym Ctrl+Tab workspace next
+
+bindsym Ctrl+Shift+Tab workspace prev
 # Layouts:
 bindsym $mod+b           splith
 bindsym $mod+v           splitv
@@ -103,7 +105,7 @@ bindsym $mod+space       focus      mode_toggle
 bindsym $mod+a           focus      parent
 
 # Scratchpad:
-bindsym $mod+Shift+minus move s cratchpad
+bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus       scratchpad show
 
 # Resize Mode:
@@ -125,26 +127,8 @@ bindsym $mod+r mode "resize"
 bindsym $mod+p exec $screenshot
 
 ### Status Bar ###
-client.focused               $col2 $col1 $col3 $col4 $col2
-client.unfocused             $col1 $col1 $col3 $col4 $col4
-client.focused_inactive      $col1 $col1 $col3 $col4 $col4
-
-bar {
-    position bottom
-    id 0
-    gaps $bargap
-    height $barheight
-    status_edge_padding 0
-    mode dock
-    status_command /home/user/.config/sway/swaybar-command.sh
-    colors {
-        background $col1
-        focused_background $col1
-        active_workspace   $col2 $col2 $col1
-        focused_workspace  $col2 $col2 $col1
-        inactive_workspace $col1 $col1 $col3
-        urgent_workspace   $col2 $col2 $col1
-    }
-}
+client.focused               $cyan $black $white $gray $cyan
+client.unfocused             $black $black $white $gray $gray
+client.focused_inactive      $black $black $white $gray $gray
 
 include /etc/sway/config.d/*
