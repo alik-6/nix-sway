@@ -1,0 +1,1 @@
+swaynag -m "Reload Sway Config?" -z  yes  "swaymsg reload" -s no --background 000000 --text FFFFFF --button-background 000000 --button-gap 0 --button-margin-right 12  --button-border-size 2 --border 8ae9fcff --border-bottom 000000FF
