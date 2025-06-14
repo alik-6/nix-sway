@@ -21,19 +21,22 @@ set {
 exec_always swaybg -i $wallpaper  -m fill
 exec waybar
 
+
 default_border pixel 2
 
 gaps inner $windowgap
 gaps outer $windowgap
 
 input $touchpadid {
-    dwt enabled
+    dwt disabled
     tap enabled
     natural_scroll enabled
     middle_emulation disabled
 }
 # Get input names using: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more details.
+bindgesture swipe:left 3 workspace previous
+bindgesture swipe:right 3 workspace next
 
 ### Key Bindings ###
 #
@@ -130,5 +133,6 @@ bindsym $mod+p exec $screenshot
 client.focused               $cyan $black $white $gray $cyan
 client.unfocused             $black $black $white $gray $gray
 client.focused_inactive      $black $black $white $gray $gray
+
 
 include /etc/sway/config.d/*
