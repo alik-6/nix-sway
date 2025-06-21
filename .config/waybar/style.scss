@@ -1,107 +1,83 @@
-/* ~/.config/waybar/style.scss */
 @use 'sass:color';
-/* Color Variables */
-$black: rgba(0, 0, 0, 1);
-$cyan: rgba(138, 233, 252, 1);
-$white: rgba(255, 255, 255, 1);
-$gray: rgba(128, 128, 128, 0.502);
+
+/* Redesigned Colors */
+$bg-dark: rgba(30, 32, 34, 0.85);
+$bg-lighter: rgba(44, 47, 51, 0.9);
+$accent-teal: rgba(0, 181, 173, 1);
+$accent-orange: rgba(255, 140, 0, 1);
+$text-light: rgba(240, 240, 240, 1);
+$text-muted: rgba(170, 170, 170, 1);
 
 /* Global Defaults */
 * {
     font-family: "JetBrains Mono", "Sans";
     font-size: 14px;
-    color: $white;
-    // border: 1px solid red;
+    color: $text-light;
+
 }
 
 /* Waybar Window */
 window#waybar {
-    background-color: $black;
-    margin: 10px;
+    background-color: $bg-dark;
+    margin: 10px 10px 10px 10px;
     margin-top: 0px;
-    border: 0px;
+    border-radius: 4px;
+
+    #tray,
+    #custom-clock {
+        padding-right: 6px;
+    }
+
+    #workspaces {
+        color: $bg-dark;
+        background-color: transparent;
+        margin: 0;
+
+        button {
+            border: 0;
+            outline: 0;
+            margin: 0;
+            padding: 0 6px;
+            background-color: $bg-lighter;
+            border-radius: 3px;
+            color: $text-muted;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        
+            &:hover * {
+                color: $bg-dark;
+
+            }
+         
+           
+            &.focused {
+                background-color: $accent-teal;
+                & > * {
+                    color: $bg-dark; // lighter text for better contrast
+                }
+                &:hover  * {
+                    color: $accent-teal;
+                }
+            }
+
+            &.urgent {
+                background-color: $accent-orange;
+                color: $bg-dark;
+            }
+        }
+    }
+
+    #mode {
+        background-color: $accent-teal;
+        color: $bg-dark;
+        padding: 0 6px;
+        margin-right: 2px;
+        border-radius: 3px;
+    }
+
+    #window>* {
+        margin: 4px 0 0 4px;
+        font-size: 12px;
+        letter-spacing: 0.85px;
+        color: $text-muted;
+    }
 }
-
-#tray {
-    padding-right: 4px;
-}
-
-#custom-clock {
-    padding-right:4px;
-}
-/* Workspaces */
-#workspaces {
-    margin: 0px;
-}
-
-#mode {
-    background-color: $cyan;
-    color: $black;
-    padding: 0px;
-    padding-left: 6px;
-    padding-right: 6px;
-    margin-right: 2px;
-}
-
-#workspaces button {
-    border: 0;
-    outline: 0;
-    margin: 0;
-    padding: 0 4px;
-    border-radius: 0px;
-    background-color: $black;
-    color: $white;
-}
-
-
-
-#workspaces button.focused {
-    background-color: $cyan;
-    color: $black;
-}
-
-#workspaces button.urgent {
-    background-color: color.adjust($color: $cyan, $lightness: -20%);
-    color: $black;
-}
-
-#workspaces button.urgent>* {
-    color: $black;
-}
-
-#workspaces button.focused>* {
-    color: $black;
-}
-
-#workspaces button:hover,
-#workspaces button:hover>* {
-    color: $white;
-}
-
-#workspaces button.focused:hover,
-#workspaces button.focused:hover>* {
-    color: $white;
-}
-
-#window>* {
-    margin: 0px;
-    margin: 4px;
-    margin-top: 0px;
-    font-size: 12px;
-    letter-spacing: 0.85px;
-    // font-weight: 400;
-    margin-left: 4px;
-    margin-bottom: 0px;
-}
-
-/* Hover Effect */
-// #workspaces button:hover,
-// #workspaces button > *:hover {
-//     background-color: $black;
-//     color: $white;
-// }
-// #workspaces button.focused:hover,
-// #workspaces button.focused  *:hover {
-//     background-color: $cyan;
-//     color: $black;
-// }
