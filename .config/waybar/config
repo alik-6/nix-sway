@@ -10,9 +10,13 @@
         "sway/window"
     ],
     "modules-center": [
+
     ],
     "modules-right": [
-        "custom/clock",
+    
+    	"battery",
+	"pulseaudio",
+    	"custom/clock",
         "tray"
 
     ],

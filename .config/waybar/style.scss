@@ -22,7 +22,8 @@ window#waybar {
     margin: 10px 10px 10px 10px;
     margin-top: 0px;
     border-radius: 4px;
-
+    #pulseaudio,
+    #battery,
     #tray,
     #custom-clock {
         padding-right: 6px;
